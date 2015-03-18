@@ -1,0 +1,18 @@
+{
+  "name": "restify-routr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Womack <me@jameswomack.com> (http://womack.io)",
+  "license": "ISC",
+  "dependencies": {
+    "lru-cache": "^2.5.0",
+    "react": "^0.13.1",
+    "restify": "^3.0.0",
+    "routr": "^0.1.0",
+    "util-extend": "^1.0.1"
+  }
+}
