@@ -1,0 +1,12 @@
+{
+  "view_dog": {
+    "path": "/pets/:id",
+    "method": "get",
+    "componentPath": "dog"
+  },
+  "view_cat": {
+    "path": "/pets/:id",
+    "method": "get",
+    "componentPath": "cat"
+  }
+}

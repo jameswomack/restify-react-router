@@ -10,7 +10,7 @@ module.exports = React.createClass({
   // was first rendered. We also want the button to be disabled until the
   // component has fully mounted on the DOM
   getInitialState: function() {
-    return {id: 'Miau - ' + this.props.id, everybody: this.props.everybody, disabled: true};
+    return {id: 'Ruff - ' + this.props.id, everybody: this.props.everybody, disabled: true};
   },
 
   // Once the component has been mounted, we can enable the button
@@ -33,8 +33,8 @@ module.exports = React.createClass({
   // when everything has loaded
   render: function() {
     return div(null,
-      button({onClick: this.handleClick, disabled: this.state.disabled}, this.state.id),
-      div(null, this.state.everybody)
+               button({onClick: this.handleClick, disabled: this.state.disabled}, this.state.id),
+               div(null, this.state.everybody)
     );
   }
 });
