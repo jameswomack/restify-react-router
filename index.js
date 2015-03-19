@@ -12,7 +12,7 @@ server.loadViewRoutesAsRestEndpoints();
  * Demonstrate one-shot component emission
  */
 server.get('/animal-farm', function(req,res,next){
-  var componentRouter = this.componentLayer.componentRouter;
+  var componentRouter = this.componentLayer.router;
   var cat = componentRouter.componentFromPath('cat', {id: 'Gato'});
   var dog = componentRouter.componentFromPath('dog', {id: 'Perro'});
   res.emit('components:ready', [cat,dog], {everybody:'Let\'s dance now'},  next);
@@ -23,13 +23,13 @@ server.get('/animal-farm', function(req,res,next){
  * Demonstrate aggregation-based component rendering
  */
 server.param('aggregation', function(req,res,next){
-  var componentRouter = this.componentLayer.componentRouter;
+  var componentRouter = this.componentLayer.router;
   var dog = componentRouter.componentFromPath('dog', {id: 'Perro'});
   res.emit('component:ready', dog, next);
 });
 
 server.param('aggregation', function(req,res,next){
-  var componentRouter = this.componentLayer.componentRouter;
+  var componentRouter = this.componentLayer.router;
   var cat = componentRouter.componentFromPath('cat', {id: 'Gato'});
   res.emit('component:ready', cat, next);
 });
