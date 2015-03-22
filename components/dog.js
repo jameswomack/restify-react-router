@@ -1,9 +1,7 @@
 var React = require('react'),
     DOM = React.DOM, div = DOM.div, button = DOM.button;
 
-// This is just a simple example of a component that can be rendered on both
-// the server and browser
-
+// Demonstrates rendering on non-JSX
 module.exports = React.createClass({
 
   // We initialise its state by using the `props` that were passed in when it
