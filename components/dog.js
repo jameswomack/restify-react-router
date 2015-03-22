@@ -1,16 +1,14 @@
 var React = require('react'),
     DOM = React.DOM, div = DOM.div, button = DOM.button;
 
-// This is just a simple example of a component that can be rendered on both
-// the server and browser
-
+// Demonstrates rendering on non-JSX
 module.exports = React.createClass({
 
   // We initialise its state by using the `props` that were passed in when it
   // was first rendered. We also want the button to be disabled until the
   // component has fully mounted on the DOM
   getInitialState: function() {
-    return {id: this.props.id, disabled: true};
+    return {id: 'Ruff - ' + this.props.id, everybody: this.props.everybody, disabled: true};
   },
 
   // Once the component has been mounted, we can enable the button
@@ -33,7 +31,8 @@ module.exports = React.createClass({
   // when everything has loaded
   render: function() {
     return div(null,
-      button({onClick: this.handleClick, disabled: this.state.disabled}, this.state.id)
+               button({onClick: this.handleClick, disabled: this.state.disabled}, this.state.id),
+               div(null, this.state.everybody)
     );
   }
 });
